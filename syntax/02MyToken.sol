@@ -20,7 +20,7 @@ contract MyToken {
         balanceOf[msg.sender] = _initialSupply;  // msg.sender = 部署者地址
     }
     
-    // 函数修饰符
+    // 函数权限修饰符
     // public   = 外部和内部都能调用
     // private  = 只有合约内部
     // internal = 合约内部 + 继承合约

@@ -79,7 +79,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"MyContract.sol": "MyContract"
+			"syntax/01MyContract.sol": "MyContract"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -93,7 +93,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"MyContract.sol": {
+		"syntax/01MyContract.sol": {
 			"keccak256": "0x17cf26ca65642c8a5367a3d31cd62972506e1142bca02b4a7543ab024aadaf26",
 			"license": "MIT",
 			"urls": [

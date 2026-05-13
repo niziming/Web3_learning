@@ -7,7 +7,10 @@ contract MyToken {
     // 状态变量（存储在 Storage，永久保存，写入贵！）
     string public name = "MyToken";
     uint256 public totalSupply;
-    
+    uint public count;
+
+    event Increment(address user, uint value);
+
     // mapping：类似 Java 的 HashMap<address, uint256>
     mapping(address => uint256) public balanceOf;
     
@@ -35,4 +38,11 @@ contract MyToken {
         emit Transfer(msg.sender, _to, _amount);  // 发出事件，记录日志
         return true;
     }
+
+    
+    function increment() public {
+        count++;
+        emit Increment(msg.sender, count);
+    }
+
 }

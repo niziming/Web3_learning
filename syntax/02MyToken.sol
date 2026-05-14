@@ -8,7 +8,6 @@ contract MyToken {
     string public name = "MyToken";
     uint256 public totalSupply;
     uint public count;
-    uint public transferCount; // 新增：转账计数器
 
     event Increment(address user, uint value);
 
@@ -36,7 +35,7 @@ contract MyToken {
         require(balanceOf[msg.sender] >= _amount, "Insufficient balance");
         balanceOf[msg.sender] -= _amount;
         balanceOf[_to] += _amount;
-        transferCount++; // 每次转账时计数器加 1
+        emit Increment(_to, _amount);
         emit Transfer(msg.sender, _to, _amount);  // 发出事件，记录日志
         return true;
     }

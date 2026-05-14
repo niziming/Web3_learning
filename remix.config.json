@@ -40,8 +40,9 @@
         "burstAllowance": 4
       },
       "fileWritePermissions": {
-        "mode": "ask",
-        "allowedFiles": []
+        "mode": "allow-all",
+        "allowedFiles": [],
+        "lastPrompted": "2026-05-14T02:13:18.887Z"
       }
     },
     "validation": {

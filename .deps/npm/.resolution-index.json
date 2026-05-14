@@ -41,5 +41,13 @@
         "file": "syntax/03ECO20.sol"
       }
     }
+  },
+  "syntax/04MyERC20Token.sol": {
+    "__sources__": {
+      "syntax/04MyERC20Token.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.20;\r\n\r\ncontract MyERC20Token {\r\n    string public name;\r\n    string public symbol;\r\n    uint8 public decimals = 18;\r\n    uint256 public totalSupply;\r\n\r\n    mapping (address => uint256) public balanceOf;\r\n    mapping (address =>  mapping(address => uint256)) public allowance;\r\n\r\n    event Transfer(address indexed from, address indexed to, uint256 value);\r\n    event Approval(address indexed owner, address indexed spender, uint256 value);\r\n\r\n    constructor (string memory _name, string memory _symbol, uint256 _initialSupply) {\r\n        name = _name;\r\n        symbol = _symbol;\r\n        totalSupply = _initialSupply * 10 ** uint256(decimals);\r\n        balanceOf[msg.sender] = totalSupply;\r\n        emit Transfer(address(0), msg.sender, totalSupply);\r\n    }\r\n\r\n    function transfer(address to, uint256 amount) public returns (bool) {\r\n        require(to != address(0), \"Transfer to zero address\");\r\n        require(balanceOf[msg.sender] >= amount, \"insufficient balance\");\r\n        balanceOf[msg.sender] -= amount;\r\n        balanceOf[to] += amount;\r\n        emit Transfer(msg.sender, to, amount);\r\n        return true;\r\n    }\r\n    function approve(address spender, uint256 amount) public returns (bool) {\r\n        require(spender != address(0), \"Approve to zero address\");\r\n        allowance[msg.sender][spender] = amount;\r\n        emit Approval(msg.sender, spender, amount);\r\n        return true;\r\n    }\r\n\r\n    function transferFrom(address from, address to, uint256 amount) public returns (bool) {\r\n        require(to != address(0), \"Transfer to zero address\");\r\n        require(balanceOf[from] >= amount, \"Insufficient balance\");\r\n        require(allowance[from][msg.sender] >= amount, \"Insufficient allowance\");\r\n        \r\n        allowance[from][msg.sender] -= amount;\r\n        balanceOf[from] -= amount;\r\n        balanceOf[to] += amount;\r\n        emit Transfer(from, to, amount);\r\n        return true;\r\n    }\r\n}",
+        "file": "syntax/04MyERC20Token.sol"
+      }
+    }
   }
 }

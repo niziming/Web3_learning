@@ -27,7 +27,6 @@ contract MyToken {
         balanceOf[msg.sender] -= _amount;
         balanceOf[_to] += _amount;
         emit Transfer(msg.sender, _to, _amount);
-        increment();
         return true;
     }
 }

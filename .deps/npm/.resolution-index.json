@@ -42,6 +42,14 @@
       }
     }
   },
+  "syntax/00IERC20.sol": {
+    "__sources__": {
+      "syntax/00IERC20.sol": {
+        "content": "interface IERC20 {\r\n    // 查询类（view，免费）\r\n    function totalSupply() external view returns (uint256);\r\n    function balanceOf(address account) external view returns (uint256);\r\n    function allowance(address owner, address spender) external view returns (uint256);\r\n    \r\n    // 写操作（需要发交易，消耗 Gas）\r\n    function transfer(address to, uint256 amount) external returns (bool);\r\n    function approve(address spender, uint256 amount) external returns (bool);\r\n    function transferFrom(address from, address to, uint256 amount) external returns (bool);\r\n    \r\n    // 事件（转账和授权时必须 emit）\r\n    event Transfer(address indexed from, address indexed to, uint256 value);\r\n    event Approval(address indexed owner, address indexed spender, uint256 value);\r\n}",
+        "file": "syntax/00IERC20.sol"
+      }
+    }
+  },
   "syntax/04MyERC20Token.sol": {
     "__sources__": {
       "syntax/04MyERC20Token.sol": {

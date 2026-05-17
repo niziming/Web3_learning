@@ -202,7 +202,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"syntax/03ECO20.sol": "IERC20"
+			"syntax/00IERC20.sol": "IERC20"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -216,7 +216,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"syntax/03ECO20.sol": {
+		"syntax/00IERC20.sol": {
 			"keccak256": "0x9cf537040d208cfdf35893799f55b257be019205a3a6a5716e47e0672b81c8a1",
 			"urls": [
 				"bzz-raw://25256142471aefb75aa7a234ddbdb9a8fe5c67f83d872a091e4c420cb030e77a",
